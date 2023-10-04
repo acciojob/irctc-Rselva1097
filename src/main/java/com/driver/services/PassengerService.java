@@ -6,6 +6,7 @@ import com.driver.repository.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class PassengerService {
 
@@ -14,7 +15,8 @@ public class PassengerService {
 
     public Integer addPassenger(Passenger passenger){
         //Add the passenger Object in the passengerDb and return the passegnerId that has been returned
-        return null;
+        Passenger response=passengerRepository.save(passenger);
+        return response.getPassengerId();
     }
 
 }
